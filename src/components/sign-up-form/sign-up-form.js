@@ -18,8 +18,6 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
-  console.log("formFields: ", formFields);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -33,7 +31,7 @@ const SignUpForm = () => {
     }
 
     if (password.length < 6 && confirmPassword.length) {
-      alert("Passwords do not match");
+      alert("Password cannot be less than 6 characters");
       return;
     }
 
@@ -42,7 +40,6 @@ const SignUpForm = () => {
         email,
         password
       );
-      console.log("response: ", user);
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
