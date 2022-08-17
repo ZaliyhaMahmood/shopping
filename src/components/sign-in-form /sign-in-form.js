@@ -22,6 +22,7 @@ const SignInForm = () => {
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
+    alert("You have successfully signed in.")
   };
 
   const handleSubmit = async (event) => {
@@ -33,6 +34,7 @@ const SignInForm = () => {
         password
       );
       resetFormFields();
+      alert("You have successfully signed in.")
     } catch (error) {
       switch (error.code) {
         case "auth/wrong-password":
