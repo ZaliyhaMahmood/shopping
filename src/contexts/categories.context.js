@@ -3,7 +3,7 @@ import SHOP_DATA from "../shop-data.js";
 import {
   addCollectionAndDocuments,
   getCollectionAndDocuments,
-} from "../utils/firebase/firebase.utils.js";
+} from "../utils/firebase/firebase.utils.ts";
 
 export const CategoriesContext = createContext({
   categoriesMap: {},
